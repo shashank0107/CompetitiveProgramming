@@ -1,3 +1,11 @@
+/* 
+    Author : manu_sy
+    
+    Idea : 
+        - Similar to 
+        https://github.com/MohamedAhmed04/Competitive-programming/blob/master/Topcoder/Topcoder%20SRM525-D1-525%20Rumor.cpp
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
