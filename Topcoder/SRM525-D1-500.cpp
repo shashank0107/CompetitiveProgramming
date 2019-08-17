@@ -1,5 +1,4 @@
 /* 
-    - Note : This currently has been checked only on prestests since not being able to submit on topcoder currently
     Author : manu_sy
     
     Idea : 
