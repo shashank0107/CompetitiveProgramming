@@ -2,7 +2,11 @@
     Author : manu_sy
 
     Idea : Just convert the expression to postfix and then evaluate.
+        - Have handled doubles in expression also
         - Keep checking errors in between
+        
+        Do See (Easier and more general approach) :
+        - https://github.com/mostafa-saad/MyCompetitiveProgramming/blob/master/UVA/622.cpp
 */
 #include <bits/stdc++.h>
 using namespace std;
