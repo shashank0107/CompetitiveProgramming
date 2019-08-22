@@ -1,6 +1,6 @@
 /*
     Author : manu_sy
-    Idea : Just use a red black tree (C++ Policy Based DS) to perform ADD and GET
+    Idea : Just use a red black tree (C++ Policy Based DS) to perform ADD and GET in O(logn)
         - To handle duplicates insert {a[i], cnt++} where presence of cnt makes all elements unique
 */
 #include <bits/stdc++.h>
