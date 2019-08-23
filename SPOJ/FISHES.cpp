@@ -1,7 +1,7 @@
 /*
     Author : manu_sy
 
-    Idea : Just reduce the equation and transform the matrix and calculate max subrectangle sum o(n^3)
+    Idea : Just reduce the equation and transform the matrix and calculate max subrectangle sum O(n^3)
     Similar to 
         - https://github.com/mostafa-saad/MyCompetitiveProgramming/blob/master/SPOJ/SPOJ_FISHES.txt
 */
