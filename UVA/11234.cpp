@@ -21,6 +21,9 @@
 
         - And now get E from the back of queue and continue step 1,2,3.
         - If you encounter number then just insert in front of answer
+        
+    Another Sol :
+    https://github.com/AbdelrahmanRamadan/competitive-programming/blob/master/UVA/11234%20-%20Expressions.cpp
 */
 #include <bits/stdc++.h>
 using namespace std;
