@@ -7,6 +7,9 @@
       - FOR(i,n-1,0):
         current elements position is (RBT.size()-a[i]-1)th in the RBT. 
         Remove this from RBT.
+        
+     Other Solutions :
+     https://github.com/mostafa-saad/MyCompetitiveProgramming/blob/master/SPOJ/SPOJ_ORDERS.txt
 */
 #include <bits/stdc++.h>
 using namespace std;
