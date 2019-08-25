@@ -8,7 +8,7 @@
     Complexity of this solution is O(m*(2^n)) but optimized so it passes since all masks arent reached for all i
 
     Better Solution :
-        https://github.com/magdy-hasan/competitive-programming/blob/master/Other/ZOJ%20Get%20Sauce.cpp
+        https://github.com/shashank0107/CompetitiveProgramming/blob/master/ZOJ/3305_better.cpp
 */
 #include <bits/stdc++.h>
 using namespace std;
