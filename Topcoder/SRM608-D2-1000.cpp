@@ -6,7 +6,7 @@
     Reason : - let length of the two cylces be p1 & p2 and their lcm(p1,p2) be L. 
              - So to cover a length of L we have 2 choices atleast,
                now for 2*L length - 2*2 choices, ...
-             - For very big length - 2^(L/2) ~ 2^L : Exponential
+             - For very big length - 2^(L/2) ~ 2^L choices : Exponential
     
     So just start dfs from all vertices and check if we reach back to it more than once.
 */
