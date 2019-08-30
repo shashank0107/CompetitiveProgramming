@@ -7,74 +7,77 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/** Template Begins **/
-//#define int ll
-typedef long long        ll;
-typedef pair<int,int>    PII;
+typedef long long    ll;
+typedef vector<int>  vi;
 
-#define IOS         ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define endl        '\n'
-#define pb          push_back
-#define F           first
-#define S           second
-#define mp          make_pair
-#define FOR(i,a,b)  for(int i=a;i<=b;i++)
+#define pb           push_back
+#define F            first
+#define S            second
+#define mp           make_pair
+#define all(a)       (a).begin(),(a).end()
+#define fr(i,a,b)    for(int i=a;i<=b;i++)
+#define lp(i,a)      for(int i=0;i< a;i++)
 
-/* Debug */
-template<class L, class R> ostream &operator<<(ostream &os, pair<L,R> P) {
-  return os << "(" << P.st << "," << P.nd << ")";
-} 
-template<class T> ostream &operator<<(ostream& os, vector<T> V) {
-  os << "["; for (auto vv : V) os << vv << ","; return os << "]";
-}
-template<class TH> void _dbg(const char *sdbg, TH h){ cerr<<sdbg<<'='<<h<<endl; }
-template<class TH, class... TA> void _dbg(const char *sdbg, TH h, TA... a) {
-  while(*sdbg!=',')cerr<<*sdbg++;
-  cerr<<'='<<h<<','; _dbg(sdbg+1, a...);
-}
-#ifdef LOCAL
-#define debug(...) _dbg(#__VA_ARGS__, __VA_ARGS__)
-#else
-#define debug(...) (__VA_ARGS__)
-#define cerr if(0)cout
-#endif
-/* Debug Ends */
+#define trace(x)                 cout << #x << ": " << x << endl;
+#define trace2(x, y)             cout << #x << ": " << x << " | " << #y << ": " << y << endl;
+#define trace3(x, y, z)          cout << #x << ": " << x << " | " << #y << ": " << y << " | " << #z << ": " << z << endl;
 
-const int N = 5e5+7;
-const int NN = 710;
 
-/** Template Ends **/
-int q, idx, val;
-ll ans[NN][NN];
-ll a[N];
+class BerryPacker {
+public:
+	double bestPacking(vector <int> first, vector <int> period, int b) {
+		
+		int m = first.size();
+		int bs = 1<<m;
+		vi seen(m, 0), cnt(bs, 0);
+		vector<double> val(bs,0), profit(m,0);
+		
+		double ret = 0;
+		for (int n = 0; n < b; n++) {
+			
+			//trace(n);
+			int mask = 0;
+			for (int bx = 0; bx < m; bx++) {
+				if (n >= first[bx] && (n-first[bx])%period[bx] == 0) 
+					seen[bx]++, mask |= (1<<bx);
+				//trace2(bx, seen[bx]);
+			}
+		 	cnt[mask]++;
+		  	
+		  	if (n+1 >= (b+8)/9) {
+		  		double ans = 0;
+		  		for (int i = 0; i < m; i++) {	
+		  			if (seen[i] > 0)	profit[i] = (((n+1)*1.0)/seen[i])/m;
+		  			else profit[i] = 0;
+		  			//trace2(i, profit[i]);
+		  		}
+		  		vector<pair<double, int> > v;		// contains profit of each type of box and the respective cnt
+		  		for (int i = 0; i < bs; i++) {
+		  			val[i] = 0;
+		  			for (int bit = 0; bit < m; bit++) if ((i>>bit)&1) {
+		  				val[i] += profit[bit];
+		  			}
+		  			v.pb(mp(val[i], cnt[i]));
+		  			//trace3(i, val[i], cnt[i]);
+		  			ans += cnt[i]*val[i];			// each box contains 1 berry now.
+		  		}
+		  		sort(v.begin(), v.end());	reverse(all(v));
+		  		
+		  		int remain = b-(n+1);
+		  		for (auto b : v) if (remain > 0) {
+		  			int have = b.S*8;
+		  			int take = min(remain, have);
+		  			ans += take*b.F;
+		  			remain -= take;
+		  		}
+		  		assert(remain == 0);
+		  		//trace(ans);
+		  		ret = max(ans, ret);	
+		  	}
+		}    
+		return ret;
+	}
+};
 
-signed main() {
-
-    IOS;
-    int q;  cin >> q;
-    while (q--) {
-        int t;  cin >> t;
-        
-        if (t == 1) {
-            cin >> idx >> val;  
-            a[idx] += val; 
-
-            for (int x = 1; x < NN; x++) {
-                ans[x][idx%x] += val;
-            }
-        } else {
-            int x, y;   cin >> x >> y;
-
-            if (x < NN) {
-                cout << ans[x][y] << endl;
-            } else {
-                ll ret = 0;
-                for (int i = y; i < N; i+=x)
-                    ret += a[i];
-                cout << ret << endl;
-            }
-        }
-    }
-
-    return 0;
-}
+<%:testing-code%>
+//Powered by KawigiEdit 2.1.4 (beta) modified by pivanof!
