@@ -1,6 +1,21 @@
 /*
     Author : manu_sy
-    Idea : Will write later
+    
+    Idea : We are give an n-digit no. num and need to find smallest no. greater than num that is equidigit
+    
+    	- Let d be the frequency of each digit in our answer
+		- Notice d is a divisor of n and digits used : dcnt = n/d
+		- Since the values of d for a particular n are very limited we can find answer for each particular d
+	  
+	   		To find answer for d : we have to select dcnt digits from 0..9. Here also brute force over all search space
+			So do it to get all the possible digits in our no.
+			and then try to create our answer using these digits.
+			Take min of all possible answers.
+		
+		Time Complexity : O( div(n) * ncr(10,dnct) * n * n )
+		n : no. of digits in our no.
+		div(n) : no. of divisors of n
+		dcnt : No. of distinct digits to calculate answer
 */
 
 #include <bits/stdc++.h>
