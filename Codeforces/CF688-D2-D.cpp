@@ -3,8 +3,8 @@
     
     Idea : For any given c[i], we can determine all x%d where d is a divisor of c[i].
       
-        - For the answer to exist we should be able to determine such c[i]'s such that lcm(c[i]) = k
-        - So we these remainders can only be divisors of k
+        - For the answer to exist we should be able to determine such d's such that lcm(d) = k
+        - So these d can only be divisors of k
         - So we'll find which all divisors of k can be found using all c[i].
         - if lcm of all the ones found is k, the answer is yes
           else no
