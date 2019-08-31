@@ -16,6 +16,9 @@
 		n : no. of digits in our no.
 		div(n) : no. of divisors of n
 		dcnt : No. of distinct digits to calculate answer
+		
+	Another Solution :
+	https://github.com/WaleedAbdelhakim/Competitive-Programming/blob/master/TopCoder/SRM392-D1-1000.cpp
 */
 
 #include <bits/stdc++.h>
