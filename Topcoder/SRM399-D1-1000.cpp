@@ -17,6 +17,9 @@
             ans++
             add 1 to cap[source][inb(i)], cap[oug(i)][sink] so that next round can have flow n again if possible
         else break
+	
+   To better understand : see editorial (same approach)
+   https://www.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm399
 */
 
 
