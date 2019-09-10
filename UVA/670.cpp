@@ -1,5 +1,8 @@
 /*
     Author : manu_sy
+    
+    Idea : Approach is same as the one mentioned here
+        https://github.com/tanmoy13/CompetitveProgramming/blob/master/Online-Judge-Solutions/UVA/670%20-%20The%20dog%20task.cpp
 */
 #include <bits/stdc++.h>
 using namespace std;
