@@ -3,7 +3,7 @@
     
     Idea : Using maxflow-mincut
         - person1 is the source, person2 is the sink
-        - for person1 and person2 to be 3 friends - path of length less than 3 edges :
+        - for person1 and person2 to be 3 friends - path of length <= 3 edges :
            1. A -> v1 -> B
            2. A -> v1 -> v2 -> B
         - We definately need to remove vertices of type 1. So remove them and add to ans
