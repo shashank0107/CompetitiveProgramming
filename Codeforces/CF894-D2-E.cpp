@@ -2,7 +2,7 @@
     Author : manu_sy
     
     Idea : - Make a Component graph.
-           - Now you profit in each component is the total value that you can derive from walking in that component
+           - Now profit in each component is the total value that you can derive from walking in that component
            - Calculate the answer for component of s using dfs - trivial dp
 */
 #include <bits/stdc++.h>
