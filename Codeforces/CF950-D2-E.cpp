@@ -3,7 +3,7 @@
     
     Idea : Just make a graph where i->j edge if for any client (u(i)+1)%h = u(j)
            Now make component graph 
-           Now we have to choose a component s.t the directed path from it till any sink is minimum possible
+           Now we have to choose a component s.t the reachability count is minimum
            So we can check every component which is a sink and take the one which has minimum size
 */
 #include <bits/stdc++.h>
