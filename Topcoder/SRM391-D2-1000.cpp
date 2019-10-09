@@ -42,7 +42,7 @@ public:
 	int ver(int i, int j) {
 		return i*mi+j;
 	}
-	    /* Tarjan */
+	/* Tarjan */
     int dfn[N], lowLink[N], ndfn, comp[N], instack[N], profit[N], dp[N];
     stack<int> st;
     vector<vector<int> > comps;
