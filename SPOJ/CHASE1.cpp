@@ -4,6 +4,7 @@
     Idea : If A manages to reach a cycle before B, then A wont be caught.
            So just find all the nodes that are in cycle and the time to reach there by A and B
            If no such cyclic node exists where A reach before B, then ans is the max time to reach a node by B (where A reach first)
+    Note : This solution has some bug. Not AC yet.
 */
 #include <bits/stdc++.h>
 using namespace std;
