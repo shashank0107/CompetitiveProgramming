@@ -7,7 +7,7 @@
            - All nodes in this component graph with indegree 0 should be included
            - Now other nodes can be included as long as they decrease the average
            - To order the result, just do according to their position in toposort,
-             i.e, if i->j then j definately in result j must be before i
+             i.e, if i->j then definately in result j must be before i
 */
 #include <bits/stdc++.h>
 using namespace std;
