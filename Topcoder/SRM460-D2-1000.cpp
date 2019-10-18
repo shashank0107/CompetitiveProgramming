@@ -76,13 +76,11 @@ public:
         int taken = 0;
         for (int i = 0; i < n; i++) for (int j = i+1; j < n; j++) if (g[i][j] == 'Y') {
             assert(find_set(i) != find_set(j));
-            if (find_set(i) == find_set(j)) cout << "Yo" << endl;
             union_sets(i,j), taken++;
         } else edges.pb(mp(i,j));
     
         ans = 0;        
         go(0, taken);
-
         return ans;
     }
 };
