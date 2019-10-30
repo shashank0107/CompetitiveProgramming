@@ -1,0 +1,103 @@
+/*
+    Author : manu_sy
+    
+    Idea : Just have to find 3 - tuples i < j < k s.t a[i] < a[j] < a[k] || a[i] > a[j] > a[k]
+        - bt1 -> stores freq of no.s
+        - bt2 -> stores freq of x < y for each y
+        - bt3 -> stores freq of x > y for each y
+        
+        Using these we can easily calculate the answer.
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+/** Template Begins **/
+
+typedef long long        ll;
+typedef pair<int,int>    PII;
+
+#define IOS         ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define endl        '\n'
+#define pb          push_back
+#define F           first
+#define S           second
+#define mp          make_pair
+#define all(a)      (a).begin(), (a).end()
+#define FOR(i,a,b)  for(int i=a;i<=b;i++)
+#define LP(i,n)     for(int i=0;i< n;i++)
+
+/* Debug */
+template<class L, class R> ostream &operator<<(ostream &os, pair<L,R> P) {
+  return os << "(" << P.F << "," << P.S << ")";
+} 
+template<class T> ostream &operator<<(ostream& os, vector<T> V) {
+  os << "["; for (auto vv : V) os << vv << ","; return os << "]";
+}
+template<class TH> void _dbg(const char *sdbg, TH h){ cerr<<sdbg<<'='<<h<<endl; }
+template<class TH, class... TA> void _dbg(const char *sdbg, TH h, TA... a) {
+  while(*sdbg!=',')cerr<<*sdbg++;
+  cerr<<'='<<h<<','; _dbg(sdbg+1, a...);
+}
+#ifdef LOCAL
+#define debug(...) _dbg(#__VA_ARGS__, __VA_ARGS__)
+#else
+#define debug(...) (__VA_ARGS__)
+#define cerr if(0)cout
+#endif
+/* Debug Ends */
+
+const int N = 1e5+7;
+
+/** Template Ends **/
+int n, a[N];
+
+struct BIT {
+    vector<int> bit;
+    int n;
+
+    BIT (int n): n(n+1) {
+        bit.assign(n+1, 0);
+    } 
+    void add (int idx, int val) {
+        for (++idx; idx < n; idx += idx & -idx)
+            bit[idx] += val;
+    }
+    int sum (int idx) {
+        int ret = 0;
+        for (++idx; idx > 0; idx -= idx & -idx)
+            ret += bit[idx];
+        return ret;
+    }
+    int sum (int l, int r) {
+        if (r < l)  return 0;
+        return sum(r) - sum(l-1);
+    }
+};
+
+signed main() {
+
+    IOS;
+    int t;  cin >> t;
+    while (t--)
+    {
+        cin >> n;
+        BIT bt1(N+1), bt2(N+1), bt3(N+1);
+
+        ll ans = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int x;  cin >> x;
+
+            ans += bt2.sum(1, x-1);
+            ans += bt3.sum(x+1, N);
+
+            bt1.add(x, 1);
+            bt2.add(x, bt1.sum(1, x-1));
+            bt3.add(x, bt1.sum(x+1, N));
+        }
+
+        cout << ans << endl;
+    }
+
+    return 0;
+}
