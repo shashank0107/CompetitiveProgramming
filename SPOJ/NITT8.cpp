@@ -5,7 +5,7 @@
           - So without loss of generality we can assume for each i -> this is the minimum, now find the maximum frienship
             for this i
           - So for each i we need to find the farthest to its left and to its right which are not less than it and then we 
-            can find the max f(i,j) if a[i] is the minimum one.
+            can find the max value f(i,j) in which the minimum is present at ith index.
           - Can easily do it using binary search in prefix-max array
           Complexity : O(nlogn)
 */
