@@ -1,5 +1,6 @@
 /*
     Author : manu_sy
+    Note : This solution is WA.
     
     Idea : mx[i], mn[i] denotes the maximum, minimum index from which ith line is reachable
            ans[i] = mx[i] - mn[i] + 1
