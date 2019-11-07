@@ -4,7 +4,7 @@
     Idea : 
         - For each i calculate the length of the longest increasing subsequence starting at i
         
-        - Now for each query calculate answer by traversing from left to right
+        - Now for each query calculate answer by traversing cur from left to right
           if lis[cur] >= need && a[cur] > last_included :
              include a[cur] in ans
              last_included = a[cur]
