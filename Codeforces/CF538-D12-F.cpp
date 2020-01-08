@@ -5,6 +5,9 @@
              eg: par(7) = 1 in heaps of size 4, 5, 6
              - So we update these together and move to the next heap size for which the parent is not the same
              - This optimization makes it pass in Time limit
+           
+           This solution is same as discussed in 2nd approach in editorial
+           https://codeforces.com/blog/entry/17612
 */
 #include <bits/stdc++.h>
 using namespace std;
