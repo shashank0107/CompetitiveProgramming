@@ -7,7 +7,7 @@
          
           Now how to make sure only distinct subsequences are counted : 
           - keep a count[ele][j] which denotes how many sequences are present of lenght j ending at ele
-          - when ele is found again and you find the count of sequences ending at ele of length j then 
+          - when ele is found again and you find the number of sequences ending at ele of length j then 
             subtract count[ele][j] from it since they have already been counted. 
             And then update the count[ele][j]
 */
