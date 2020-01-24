@@ -120,13 +120,10 @@ public:
         vector<vector<int> > adj(1007);
         int mx = INT_MIN;
         for (int i = 0; i < n; i++) {
-            if (N[i] == 1 && M[i] == 1) continue;
-            debug(N[i], M[i]);
             mx = max(mx, N[i]);
             adj[N[i]].pb(M[i]);
         }
         auto p = euler_directed_adj(adj);
-        debug(p.F, p.S);
         if (p.F == 0) return -1;
         else if (p.F == 1) {
             return p.S[0] * p.S.back();
