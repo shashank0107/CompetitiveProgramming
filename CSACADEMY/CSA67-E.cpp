@@ -3,7 +3,9 @@
     Idea : meet in the middle
             iterate from left to right 
           - we will change the the last m / 2 bits of number and store it in cnt[num][dist]
-          - Iterate over the changes in the first m / 2 bits and then use cnt[num][dist] to get answers #include "bits/stdc++.h"
+          - Iterate over the changes in the first m / 2 bits and then use cnt[num][dist] to get answers 
+*/
+#include "bits/stdc++.h"
 using namespace std;
 
 /** Template Begins **/
