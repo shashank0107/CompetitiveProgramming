@@ -3,7 +3,7 @@
     Idea : First divide array into two equal parts : 
           - make all permutations of first part and store the ending point
           - make all permuations of second part from back and add to answer the number of endings before position reached currently
-          Complexiy : 2 * 7! * log(n) * ncr(14, 7)
+          Complexiy : ncr(14, 7) * 2 * 7! * log(n)
           
 */
 #include "bits/stdc++.h"
