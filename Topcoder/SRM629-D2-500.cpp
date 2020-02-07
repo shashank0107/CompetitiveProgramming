@@ -1,5 +1,6 @@
 /*
     Author : manu_sy
+    Idea : ternary search. Note that f first decreases then increases
 */
 #include "bits/stdc++.h"
 using namespace std;
