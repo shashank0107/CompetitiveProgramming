@@ -1,6 +1,6 @@
 /*
     Author : manu_sy
-    Idea : Similar to comment -
+    Idea : Similar to comment - https://codeforces.com/blog/entry/239?#comment-555969
            - For finding if a substring is palindrome : manacher is used
 */
 #include "bits/stdc++.h"
