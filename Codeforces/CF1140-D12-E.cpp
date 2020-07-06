@@ -1,5 +1,8 @@
 /*
     Author : manu_sy
+    Idea : Note the problem can be reduced to no. of ways s.t a[i] != a[i + 2]
+          - and this can be reduced to no. of ways such that no two consequtive elements are equal
+          - which can be solved using dp
 */
 #include "bits/stdc++.h"
 using namespace std;
